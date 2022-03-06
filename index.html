@@ -1,4 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<h1>hello World!</h1>
+<body>
+
+<p>Click on the "Choose File" button to upload a file:</p>
+
+<form>
+  <?php include 'database.php'; ?>
+  <input type="file" id="myFile" name="filename">
+  <input type="submit">
+</form>
+
+</body>
 </html>
