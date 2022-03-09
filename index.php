@@ -252,7 +252,8 @@ $(document).ready(function() {
 </head>
 
 <body>
-    <h2>Import CSV file into Mysql using PHP</h2>
+	<h3>Sankalp Sandeep Singh<br> UTA - 1001964065</h3>
+    <h2>Import CSV file into Mysql Azure</h2>
 
     <div id="response"
         class="<?php if(!empty($type)) { echo $type . " display-block"; } ?>">
@@ -275,6 +276,10 @@ $(document).ready(function() {
                 </div>
 
             </form>
+		<div>
+			<button type="submit" id="submit" name="import2"
+                        class="btn-submit">Find EarthQuake mag 5+</button>
+		</div>
 
         </div>
                <?php
