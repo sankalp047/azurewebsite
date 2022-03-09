@@ -24,30 +24,38 @@ $password = 'qwerty@123';
 $db_name = 'import_csv';
  private $conn;
 
- function __construct()
+    /**
+     * PHP implicitly takes care of cleanup for default connection types.
+     * So no need to worry about closing the connection.
+     *
+     * Singletons not required in PHP as there is no
+     * concept of shared memory.
+     * Every object lives only for a request.
+     *
+     * Keeping things simple and that works!
+     */
+    function __construct()
     {
         $this->conn = $this->getConnection();
     }
- 
- 
+
+    /**
+     * If connection object is needed use this method and get access to it.
+     * Otherwise, use the below methods for insert / update / etc.
+     *
+     * @return \mysqli
+     */
     public function getConnection()
     {
-        //Initializes MySQLi
-    $conn = mysqli_init();
+        $conn = new \mysqli(self::HOST, self::USERNAME, self::PASSWORD, self::DATABASENAME);
 
-  
+        if (mysqli_connect_errno()) {
+            trigger_error("Problem with connecting to database.");
+        }
 
-// Establish the connection
-    mysqli_real_connect($conn, 'mysqlassign.mysql.database.azure.com', 'mysql@mysqlassign', 'qwerty@123', 'import_csv', 3306, NULL);
-
-//If connection failed, show the error
-    if (mysqli_connect_errno())
-    {
-    die('Failed to connect to MySQL: '.mysqli_connect_error());
-    }
+        $conn->set_charset("utf8");
         return $conn;
     }
-
     public function select($query, $paramType = "", $paramArray = array())
     {
         $stmt = $this->conn->prepare($query);
