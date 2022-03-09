@@ -20,11 +20,11 @@ class DataSource
 
     // PHP 7.1.0 visibility modifiers are allowed for class constants.
     // when using above 7.1.0, declare the below constants as private
-    const HOST = 'localhost';
+    const HOST = 'mysqlassign.mysql.database.azure.com';
 
-    const USERNAME = 'root';
+    const USERNAME = 'mysql@mysqlassign';
 
-    const PASSWORD = '';
+    const PASSWORD = 'qwerty@123';
 
     const DATABASENAME = 'import_csv';
 
