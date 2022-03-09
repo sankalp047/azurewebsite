@@ -160,7 +160,7 @@ $(document).ready(function() {
 
         </div>
                <?php
-            $sqlSelect = "SELECT id FROM ni WHERE id BETWEEN 5000 and 7000";;
+            $sqlSelect = "SELECT name FROM ni WHERE id BETWEEN 5000 and 7000";;
 	    //SELECT job FROM mytable WHERE id BETWEEN 10 AND 15
             $result = $db->select($sqlSelect);
             if (! empty($result)) {
