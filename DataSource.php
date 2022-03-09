@@ -22,6 +22,7 @@ class DataSource
 $username = 'mysql@mysqlassign';
 $password = 'qwerty@123';
 $db_name = 'import_csv';
+ private $conn;
 
 
     public function getConnection()
