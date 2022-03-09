@@ -18,11 +18,17 @@ namespace Phppot;
 class DataSource
 {
 
- $host = 'mysqlassign.mysql.database.azure.com';
-$username = 'mysql@mysqlassign';
-$password = 'qwerty@123';
-$db_name = 'import_csv';
- private $conn;
+    // PHP 7.1.0 visibility modifiers are allowed for class constants.
+    // when using above 7.1.0, declare the below constants as private
+    const HOST = 'mysqlassign.mysql.database.azure.com';
+
+    const USERNAME = 'mysql@mysqlassign';
+
+    const PASSWORD = 'qwerty@123';
+
+    const DATABASENAME = 'import_csv';
+
+    private $conn;
 
     /**
      * PHP implicitly takes care of cleanup for default connection types.
@@ -56,6 +62,15 @@ $db_name = 'import_csv';
         $conn->set_charset("utf8");
         return $conn;
     }
+
+    /**
+     * To get database results
+     *
+     * @param string $query
+     * @param string $paramType
+     * @param array $paramArray
+     * @return array
+     */
     public function select($query, $paramType = "", $paramArray = array())
     {
         $stmt = $this->conn->prepare($query);
