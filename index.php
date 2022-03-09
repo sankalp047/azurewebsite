@@ -29,10 +29,10 @@ if (isset($_POST["import"])) {
             
             if (! empty($insertId)) {
                 $type = "success";
-                $message = "CSV Data Imported into the Database";
+                $message = "Result:-";
             } else {
                 $type = "error";
-                $message = "Problem in Importing CSV Data";
+                $message = "Problem fetchinh data";
             }
         }
     }
