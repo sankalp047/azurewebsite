@@ -18,57 +18,30 @@ namespace Phppot;
 class DataSource
 {
 
-    // PHP 7.1.0 visibility modifiers are allowed for class constants.
-    // when using above 7.1.0, declare the below constants as private
-$host = 'mysqlassign.mysql.database.azure.com';
+ $host = 'mysqlassign.mysql.database.azure.com';
 $username = 'mysql@mysqlassign';
 $password = 'qwerty@123';
 $db_name = 'import_csv';
 
-//Initializes MySQLi
-$conn = mysqli_init();
 
-
-
-// Establish the connection
-mysqli_real_connect($conn, 'mydemoserver.mysql.database.azure.com', 'myadmin@mydemoserver', 'yourpassword', 'quickstartdb', 3306, NULL, MYSQLI_CLIENT_SSL);
-
-//If connection failed, show the error
-if (mysqli_connect_errno())
-{
-    die('Failed to connect to MySQL: '.mysqli_connect_error());
-}
-    function __construct()
-    {
-        $this->conn = $this->getConnection();
-    }
-
-    /**
-     * If connection object is needed use this method and get access to it.
-     * Otherwise, use the below methods for insert / update / etc.
-     *
-     * @return \mysqli
-     */
     public function getConnection()
     {
-         $conn = new \mysqli(self::HOST, self::USERNAME, self::PASSWORD, self::DATABASENAME, 3306, NULL, MYSQLI_CLIENT_SSL);
+        //Initializes MySQLi
+    $conn = mysqli_init();
 
-        if (mysqli_connect_errno()) {
-            trigger_error("Problem with connecting to database.");
-        }
+    mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
 
-        $conn->set_charset("utf8");
+// Establish the connection
+    mysqli_real_connect($conn, 'mysqlassign.mysql.database.azure.com', 'mysql@mysqlassign', 'qwerty@123', 'quickstartdb', 3306, NULL, MYSQLI_CLIENT_SSL);
+
+//If connection failed, show the error
+    if (mysqli_connect_errno())
+    {
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+    }
         return $conn;
     }
 
-    /**
-     * To get database results
-     *
-     * @param string $query
-     * @param string $paramType
-     * @param array $paramArray
-     * @return array
-     */
     public function select($query, $paramType = "", $paramArray = array())
     {
         $stmt = $this->conn->prepare($query);
