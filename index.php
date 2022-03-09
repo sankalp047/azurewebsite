@@ -267,8 +267,8 @@ $(document).ready(function() {
                 enctype="multipart/form-data">
                 <div class="input-row">
                     <label class="col-md-4 control-label">Choose CSV
-                        File</label> <input type="file" name="file"
-                        id="file" accept=".csv">
+                        File</label> <input type="number" name="file"
+                        id="file">
                     <button type="submit" id="submit" name="import"
                         class="btn-submit">Import</button>
                     <br />
