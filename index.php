@@ -265,13 +265,12 @@ $(document).ready(function() {
             <form class="form-horizontal" action="" method="post"
                 enctype="multipart/form-data">
                 <div class="input-row">
-                    <label class="col-md-4 control-label">Choose CSV
-                        File</label> <input type="text" name="file"
+                    <label class="col-md-4 control-label">ENTER RANGE</label> <input type="text" name="file"
                         id="file">
 			 <input type="text" name="file"
                         id="file">
                     <button type="submit" id="submit" name="import"
-                        class="btn-submit">Import</button>
+                        class="btn-submit">SEARCH</button>
                     <br />
 
                 </div>
