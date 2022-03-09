@@ -253,7 +253,7 @@ $(document).ready(function() {
 
 <body>
 	<h3>Sankalp Sandeep Singh<br> UTA - 1001964065</h3>
-    <h2>Import CSV file into Mysql Azure</h2>
+    <h2>Finding data in range</h2>
 
     <div id="response"
         class="<?php if(!empty($type)) { echo $type . " display-block"; } ?>">
@@ -266,52 +266,30 @@ $(document).ready(function() {
                 name="frmCSVImport" id="frmCSVImport"
                 enctype="multipart/form-data">
                 <div class="input-row">
-                    <label class="col-md-4 control-label">Choose CSV
-                        File</label> <input type="file" name="file"
-                        id="file" accept=".csv">
+                    <label class="col-md-4 control-label"></label> <input type="text" name="file"
+                        id="file">
+			<label class="col-md-4 control-label"></label> <input type="text" name="file"
+                        id="file"
                     <button type="submit" id="submit" name="import"
-                        class="btn-submit">Import</button>
+                        class="btn-submit">Search</button>
                     <br />
 
                 </div>
 
             </form>
-		<div>
-			<button type="submit" id="submit" name="import2"
-                        class="btn-submit">Find EarthQuake mag 5+</button>
-		</div>
+		
 
         </div>
                <?php
-            $sqlSelect = "SELECT * FROM users";
+            $sqlSelect = "SELECT * FROM ni";
             $result = $db->select($sqlSelect);
             if (! empty($result)) {
                 ?>
-            <table id='userTable'>
+            <table id='ni'>
             <thead>
                 <tr>
-                    <th>time</th>
-                    <th>latitude</th>
-                    <th>longitude</th>
-                    <th>depth</th>
-                    <th>mag</th>
-                    <th>magType</th>
-                    <th>nst</th>
-                    <th>gap</th>
-                    <th>dmin</th>
-                    <th>rms</th>
-                    <th>net</th>
-                    <th>id</th>
-                    <th>updated</th>
-                    <th>place</th>
-                    <th>type</th>
-                    <th>horizantalError</th>
-                    <th>depthError</th>
-                    <th>magError</th>
-                    <th>magNst</th>
-                    <th>status</th>
-                    <th>locationSource</th>
-                    <th>magSource</th>
+			<th>name</th>
+			<th>id</th>
 
                 </tr>
             </thead>
@@ -322,28 +300,9 @@ $(document).ready(function() {
                     
                 <tbody>
                 <tr>
-                    <td><?php  echo $row['time']; ?></td>
-                    <td><?php  echo $row['latitude']; ?></td>
-                    <td><?php  echo $row['longitude']; ?></td>
-                    <td><?php  echo $row['depth']; ?></td>
-                    <td><?php  echo $row['mag']; ?></td>
-                    <td><?php  echo $row['magType']; ?></td>
-                    <td><?php  echo $row['nst']; ?></td>
-                    <td><?php  echo $row['gap']; ?></td>
-                    <td><?php  echo $row['dmin']; ?></td>
-                    <td><?php  echo $row['rms']; ?></td>
-                    <td><?php  echo $row['net']; ?></td>
+                    <td><?php  echo $row['name']; ?></td>
                     <td><?php  echo $row['id']; ?></td>
-                    <td><?php  echo $row['updated']; ?></td>
-                    <td><?php  echo $row['place']; ?></td>
-                    <td><?php  echo $row['type']; ?></td>
-                    <td><?php  echo $row['horizantalError']; ?></td>
-                    <td><?php  echo $row['depthError']; ?></td>
-                    <td><?php  echo $row['magError']; ?></td>
-                    <td><?php  echo $row['magNst']; ?></td>
-                    <td><?php  echo $row['status']; ?></td>
-                    <td><?php  echo $row['locationSource']; ?></td>
-                    <td><?php  echo $row['magSource']; ?></td>
+                   
                 </tr>
                     <?php
                 }
