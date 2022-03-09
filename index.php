@@ -160,7 +160,7 @@ $(document).ready(function() {
 
         </div>
                <?php
-            $sqlSelect = "SELECT * FROM ni WHERE 'id' IN (5000..8000))";;
+            $sqlSelect = "SELECT * FROM ni";;
             $result = $db->select($sqlSelect);
             if (! empty($result)) {
                 ?>
