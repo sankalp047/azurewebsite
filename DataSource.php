@@ -38,7 +38,7 @@ $db_name = 'import_csv';
   
 
 // Establish the connection
-    mysqli_real_connect($conn, 'mysqlassign.mysql.database.azure.com', 'mysql@mysqlassign', 'qwerty@123', 'quickstartdb', 3306, NULL, MYSQLI_CLIENT_SSL);
+    mysqli_real_connect($conn, 'mysqlassign.mysql.database.azure.com', 'mysql@mysqlassign', 'qwerty@123', 'import_csv', 3306, NULL, MYSQLI_CLIENT_SSL);
 
 //If connection failed, show the error
     if (mysqli_connect_errno())
