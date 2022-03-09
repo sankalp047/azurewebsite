@@ -160,7 +160,7 @@ $(document).ready(function() {
 
         </div>
                <?php
-            $sqlSelect = "SELECT * FROM ni";
+            $sqlSelect = "SELECT name FROM ni WHERE id IN (<?php $id1..$id2?>))";;
             $result = $db->select($sqlSelect);
             if (! empty($result)) {
                 ?>
