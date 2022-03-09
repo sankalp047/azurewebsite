@@ -148,7 +148,7 @@ $(document).ready(function() {
                     <label class="col-md-4 control-label"></label> <input type="text" name="id2"
                         id="file">
 			<label class="col-md-4 control-label"></label> <input type="text" name="id2"
-                        id="file"
+                        id="file">
                     <button type="submit" id="submit" name="import"
                         class="btn-submit">Search</button>
                     <br />
