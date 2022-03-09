@@ -24,13 +24,18 @@ $password = 'qwerty@123';
 $db_name = 'import_csv';
  private $conn;
 
-
+ function __construct()
+    {
+        $this->conn = $this->getConnection();
+    }
+ 
+ 
     public function getConnection()
     {
         //Initializes MySQLi
     $conn = mysqli_init();
 
-    mysqli_ssl_set($conn,NULL,NULL, "/var/www/html/DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+  
 
 // Establish the connection
     mysqli_real_connect($conn, 'mysqlassign.mysql.database.azure.com', 'mysql@mysqlassign', 'qwerty@123', 'quickstartdb', 3306, NULL, MYSQLI_CLIENT_SSL);
