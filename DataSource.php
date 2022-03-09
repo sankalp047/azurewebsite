@@ -20,26 +20,24 @@ class DataSource
 
     // PHP 7.1.0 visibility modifiers are allowed for class constants.
     // when using above 7.1.0, declare the below constants as private
-    const HOST = 'mysqlassign.mysql.database.azure.com';
+$host = 'mysqlassign.mysql.database.azure.com';
+$username = 'mysql@mysqlassign';
+$password = 'qwerty@123';
+$db_name = 'import_csv';
 
-    const USERNAME = 'mysql@mysqlassign';
+//Initializes MySQLi
+$conn = mysqli_init();
 
-    const PASSWORD = 'qwerty@123';
 
-    const DATABASENAME = 'import_csv';
 
-    private $conn;
+// Establish the connection
+mysqli_real_connect($conn, 'mydemoserver.mysql.database.azure.com', 'myadmin@mydemoserver', 'yourpassword', 'quickstartdb', 3306, NULL, MYSQLI_CLIENT_SSL);
 
-    /**
-     * PHP implicitly takes care of cleanup for default connection types.
-     * So no need to worry about closing the connection.
-     *
-     * Singletons not required in PHP as there is no
-     * concept of shared memory.
-     * Every object lives only for a request.
-     *
-     * Keeping things simple and that works!
-     */
+//If connection failed, show the error
+if (mysqli_connect_errno())
+{
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
     function __construct()
     {
         $this->conn = $this->getConnection();
@@ -53,7 +51,7 @@ class DataSource
      */
     public function getConnection()
     {
-        $conn = new \mysqli(self::HOST, self::USERNAME, self::PASSWORD, self::DATABASENAME);
+         $conn = new \mysqli(self::HOST, self::USERNAME, self::PASSWORD, self::DATABASENAME, 3306, NULL, MYSQLI_CLIENT_SSL);
 
         if (mysqli_connect_errno()) {
             trigger_error("Problem with connecting to database.");
