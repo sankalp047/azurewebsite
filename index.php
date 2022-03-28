@@ -155,7 +155,25 @@ $(document).ready(function() {
                 </div>
 
             </form>
-		
+		<br>
+		<br>
+		<h3>Enter the high and the ow values</h3>
+		<form class="form-horizontal" action="" method="post"
+                name="frmCSVImport" id="frmCSVImport"
+                enctype="multipart/form-data">
+                <div class="input-row">
+                    <label class="col-md-4 control-label"></label> <input type="text" name="id2"
+                        id="file">
+		 <label class="col-md-4 control-label"></label> <input type="text" name="id2"
+                        id="file">
+			
+                    <button type="submit" id="submit" name="import"
+                        class="btn-submit">Build Graph</button>
+                    <br />
+
+                </div>
+
+            </form>
 
         </div>
                <?php
