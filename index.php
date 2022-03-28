@@ -147,10 +147,9 @@ $(document).ready(function() {
                 <div class="input-row">
                     <label class="col-md-4 control-label"></label> <input type="text" name="id2"
                         id="file">
-			<label class="col-md-4 control-label"></label> <input type="text" name="id2"
-                        id="file">
+			
                     <button type="submit" id="submit" name="import"
-                        class="btn-submit">Search</button>
+                        class="btn-submit">Build Graph</button>
                     <br />
 
                 </div>
