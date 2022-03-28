@@ -121,7 +121,7 @@ $(document).ready(function() {
         if (!regex.test($("#file").val().toLowerCase())) {
         	    $("#response").addClass("error");
         	    $("#response").addClass("display-block");
-            $("#response").html("Invalid File. Upload : <b>" + fileType + "</b> Files.");
+            $("#response").html("Cant build graph ");
             return false;
         }
         return true;
