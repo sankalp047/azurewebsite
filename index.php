@@ -132,7 +132,7 @@ $(document).ready(function() {
 
 <body>
 	<h3>Sankalp Sandeep Singh<br> UTA - 1001964065</h3>
-    <h2>Finding data in range</h2>
+    <h2>Building a  graph from the data given</h2>
 
     <div id="response"
         class="<?php if(!empty($type)) { echo $type . " display-block"; } ?>">
